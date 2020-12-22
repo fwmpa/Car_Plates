@@ -26,7 +26,7 @@ describe CarPlateService::List, type: %i[services car_plates] do
       end
     end
 
-    context 'when do not have car plate' do
+    context 'when doesnt have a car plate' do
       it 'is empty' do
         expect(car_plate_service).to eq([])
       end

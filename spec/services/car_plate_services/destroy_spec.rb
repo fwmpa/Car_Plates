@@ -17,13 +17,11 @@ describe CarPlateService::Destroy, type: %i[services car_plate] do
       end
     end
 
-    context 'when some provided attributes are invalid' do
-      context 'when plate is invalid' do
-        let(:car_plate) { nil }
+    context 'when plate is not found' do
+      let(:car_plate) { nil }
 
-        it 'raises a record invalid exception' do
-          expect { invoke_action }.to raise_error(ActiveRecord::RecordNotFound)
-        end
+      it 'raises a record invalid exception' do
+        expect { invoke_action }.to raise_error(ActiveRecord::RecordNotFound)
       end
     end
   end

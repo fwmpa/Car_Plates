@@ -13,7 +13,7 @@ describe CarPlateService::Fetch, type: %i[services car_plate] do
       end
     end
 
-    context 'when car plate don\'t exist' do
+    context 'when car plate is not found' do
       let(:plate) { 0 }
 
       it 'raises a record not found exception' do

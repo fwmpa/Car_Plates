@@ -53,6 +53,14 @@ describe CarPlateService::Create, type: %i[services car_plates] do
           expect { car_plate_service }.to raise_error(ActiveRecord::RecordInvalid)
         end
       end
+
+      context 'when year length is invalid' do
+        let(:attributes) { attributes_for(:car_plate, year: '201') }
+
+        it 'raises a record invalid exception' do
+          expect { car_plate_service }.to raise_error(ActiveRecord::RecordInvalid)
+        end
+      end
     end
   end
 end
