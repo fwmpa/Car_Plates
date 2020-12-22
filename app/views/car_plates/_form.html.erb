@@ -1,0 +1,30 @@
+<div class="columns mt-6 is-centered">
+  <%= form_for(@car_plate) do |f| %>
+    <div>
+      <div class="card">
+        <div class="card-content">
+          <div class="field">
+            <%= f.label :plate, class: "has-text-weight-bold" %><span class="has-text-danger-dark">*</span>
+            <%= f.text_field :plate, autofocus: true, autocomplete: "plate", class: "input", placeholder: "ABC2A30, ABC2020" %>
+          </div>
+          <div class="content">
+            <%= f.label :owner, class: "has-text-weight-bold" %>
+            <%= f.text_field :owner, autocomplete: "owner", class: "input", placeholder: "Fulano De Tal"%>
+          </div>
+          <div class="content">
+            <%= f.label :model, class: "has-text-weight-bold" %>
+            <%= f.text_field :model, autocomplete: "model", class: "input", placeholder: "Ford Fusion" %>
+          </div>
+          <div class="content">
+            <%= f.label :year, class: "has-text-weight-bold" %>
+            <%= f.text_field :year, autocomplete: "year", class: "input", placeholder: "2020" %>
+          </div>
+          <div class="buttons is-centered">
+            <%= f.submit action_name == 'new' ? 'Cadastrar Placa' : 'Atualizar Placa', class:"button is-link" %>
+            <%= link_to 'Cancelar', car_plates_path, class: 'button' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

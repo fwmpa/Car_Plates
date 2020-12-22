@@ -1,0 +1,6 @@
+pt-BR:
+  activerecord:
+    errors:
+      messages:
+        required: "é obrigatorio!"
+        record_invalid: "Não foi possível realizar o cadastro, %{errors}!"

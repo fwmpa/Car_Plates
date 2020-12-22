@@ -4,12 +4,30 @@
     <title>RogaChallenge</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "header" %>
+    <div class="container">
+      <% if notice %>
+        <div class="columns mt-4 is-centered">
+          <span class="tag is-link is-light is-medium">
+            <%= notice %>
+          </span>
+        </div>
+      <% end %>
+      <% if alert.present? %>
+        <div class="columns mt-4 is-centered">
+          <span class="notification is-danger is-light is-medium">
+            <%= alert %>
+          </span>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

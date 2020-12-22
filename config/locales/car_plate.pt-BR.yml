@@ -1,0 +1,13 @@
+pt-BR:
+  activerecord:
+    models:
+      car_plate:
+        one: placa de veículo
+        other: placas de veículos
+
+    attributes:
+      car_plate:
+        plate: Placa
+        owner: Proprietário
+        model: Modelo
+        year: Ano
