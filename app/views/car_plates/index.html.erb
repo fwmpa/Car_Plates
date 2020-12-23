@@ -1,33 +1,33 @@
 <div class="card">
   <div class="card-content">
-  <table class="table is-striped is-fullwidth is-hoverable">
-    <thead>
-      <tr>
-        <th> <%= t('activerecord.attributes.car_plate.plate')%> </th>
-        <th> <%= t('activerecord.attributes.car_plate.owner')%> </th>
-        <th> <%= t('activerecord.attributes.car_plate.model')%> </th>
-        <th> <%= t('activerecord.attributes.car_plate.year')%> </th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @car_plates.each do |car_plate| %>
+    <table class="table is-striped is-fullwidth is-hoverable">
+      <thead>
         <tr>
-          <td><span class="has-text-weight-bold"><%= car_plate.plate %></span> </td>
-          <td><span class="has-text-weight-bold"><%= car_plate.owner %></span></td>
-          <td><span class="has-text-weight-bold"><%= car_plate.model %></span>  </td>
-          <td><span class="has-text-weight-bold"><%= car_plate.year %></span> </td>
-          <td>
-            <div class="buttons is-centered">
-            <%= link_to 'Editar', edit_car_plate_path(car_plate), class: "button" %>
-            <%= link_to 'Apagar', car_plate, method: :delete, data: { confirm: 'Tem certeza que deseja apagar placa?' }, class: "button has-background-danger-light has-text-danger" %>
-            </div>
-          </td>
+          <th> <%= t('activerecord.attributes.car_plate.plate')%> </th>
+          <th> <%= t('activerecord.attributes.car_plate.owner')%> </th>
+          <th> <%= t('activerecord.attributes.car_plate.model')%> </th>
+          <th> <%= t('activerecord.attributes.car_plate.year')%> </th>
+          <th></th>
         </tr>
+      </thead>
+      <tbody>
+        <% @car_plates.each do |car_plate| %>
+          <tr>
+            <td><span class="has-text-weight-bold"><%= car_plate.plate %></span> </td>
+            <td><span class="has-text-weight-bold"><%= car_plate.owner %></span></td>
+            <td><span class="has-text-weight-bold"><%= car_plate.model %></span>  </td>
+            <td><span class="has-text-weight-bold"><%= car_plate.year %></span> </td>
+            <td>
+              <div class="buttons is-centered">
+                <%= link_to 'Editar', edit_car_plate_path(car_plate), class: "button" %>
+                <%= link_to 'Apagar', car_plate, method: :delete, data: { confirm: 'Tem certeza que deseja apagar placa?' }, class: "button has-background-danger-light has-text-danger" %>
+              </div>
+            </td>
+          </tr>
         <% end %>
       </tbody>
-  </table>
-</div>
+    </table>
+  </div>
 </div>
 
 
