@@ -2,15 +2,13 @@
   <div class="hero-head">
     <nav class="navbar">
       <div class="container">
-        <div class="navbar-brand">
-          <%= link_to root_path, class: "navbar-item" do %>
-            <span class="has-textweight-bold is-size-4 ml-4">Placas de carros</span>
-          <% end %>
-        </div>
+        <%= link_to root_path, class: "navbar-item" do %>
+          <span class="has-textweight-bold is-size-4 ml-4">Placas de carros</span>
+        <% end %>
         <div id="navbarMenuHeroA" class="navbar-menu is-active">
           <div class="navbar-end">
             <span class="navbar-item">
-              <%= link_to "Registrar nova placa", new_car_plate_path, class: "button is-success" %>
+              <%= link_to "Registrar nova placa", new_car_plate_path, class: action_name == 'new' ? 'button is-hidden' : "button is-success" %>
             </span>
           </div>
         </div>

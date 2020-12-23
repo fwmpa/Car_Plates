@@ -4,7 +4,7 @@ class CarPlatesController < ApplicationController
   end
 
   def new
-    @car_plate = CarPlate.new
+    build_new_view_data
   end
 
   def create
@@ -13,7 +13,9 @@ class CarPlatesController < ApplicationController
     redirect_to car_plates_path, notice: 'Placa criada com sucesso!'
   rescue ActiveRecord::RecordInvalid => e
     flash[:alert] = e.message
+
     build_new_view_data
+
     render 'new'
   end
 
@@ -26,14 +28,18 @@ class CarPlatesController < ApplicationController
     redirect_to car_plates_path, notice: 'Placa atualizada com sucesso!'
   rescue ActiveRecord::RecordInvalid => e
     flash[:alert] = e.message
+
     build_edit_view_data
+    
     render 'edit'
   end
 
   def destroy
     car_plate = fetch_car_plate
     CarPlateService::Destroy.call(car_plate)
-    redirect_to car_plates_path
+    success_message = "Placa '#{car_plate.plate}' deletada com sucesso!"
+    
+    redirect_to car_plates_path, notice: success_message
   end
 
   private

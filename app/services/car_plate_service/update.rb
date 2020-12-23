@@ -6,8 +6,8 @@ module CarPlateService
     end
 
     def call
-        @car_plate.update!(@whitelisted_attributes)
-        @car_plate
+      @car_plate.update!(@whitelisted_attributes)
+      @car_plate
     end
 
     private
